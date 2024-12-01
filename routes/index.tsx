@@ -16,9 +16,8 @@ export default function Home() {
           alt="the Orphans & Guardians logo: gold+steel winged shield"
         />
         <h1 class="text-4xl font-bold">Welcome to Orphans & Guardians</h1>
-        <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
+        <p class="my-2">
+          Coming Soon!
         </p>
         <Counter count={count} />
         <Joke text={joke} />
