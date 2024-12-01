@@ -21,5 +21,14 @@ jobs:
         with:
           deno-version: v2.x
 
+      - name: Run Deno Format Check
+        run: deno fmt --check
+
+      - name: Run Deno Lint
+        run: deno lint
+
       - name: Run Deno tests
-        run: deno test --coverage=coverage
+        run: deno test --allow-read --coverage=cov/
+
+      - name: Generate LCOV report
+        run: deno coverage --lcov cov/ > cov.lcov
