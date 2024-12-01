@@ -1,6 +1,7 @@
 import { useSignal } from "@preact/signals";
 import Counter from "../islands/Counter.tsx";
 import Joke from "../islands/Joke.tsx";
+import Greet from "../islands/Greet.tsx";
 
 export default function Home() {
   const count = useSignal(3);
@@ -21,6 +22,7 @@ export default function Home() {
         </p>
         <Counter count={count} />
         <Joke text={joke} />
+        <Greet text={useSignal("Hello, world!")} />
       </div>
 
       <div class="flex flex-col items-center">
