@@ -4,7 +4,7 @@ import Joke from "../islands/Joke.tsx";
 
 export default function Home() {
   const count = useSignal(3);
-  const joke = useSignal("placeholder");
+  const joke = useSignal("Waiting for a joke...");
   return (
     <div class="px-4 py-8 mx-auto bg-[#86d6ef]">
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">

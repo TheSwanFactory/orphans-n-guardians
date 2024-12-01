@@ -11,14 +11,7 @@ export default function Joke(props: JokeProps) {
     <Button
       onClick={async () => {
           const response = await fetch('/api/joke');
-          console.log(response);
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const pending_data = response.text();
-          console.log(pending_data);
-          const data = await pending_data;
-          console.log(data)
+          const data = await response.text();
           props.text.value = data;
       }}
     >
