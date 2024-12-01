@@ -14,7 +14,8 @@ Learn more about parts work at the [IFS Institute](https://ifs-institute.com).
 
 ## Usage
 
-Make sure to [install Deno](https://deno.land/manual/getting_started/installation)
+Make sure to
+[install Deno](https://deno.land/manual/getting_started/installation)
 
 Then start the project:
 
