@@ -14,7 +14,7 @@ Learn more about parts work at the [IFS Institute](https://ifs-institute.com).
 
 ## Usage
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+Make sure to [install Deno](https://deno.land/manual/getting_started/installation)
 
 Then start the project:
 
@@ -23,3 +23,12 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
+To run the tests:
+
+```sh
+deno test --allow-read --allow-write
+```
+
+To deploy, simply merge into main. The project is set up to deploy automatically
+and will be visible on [Deno Deploy](https://orphans-n-guardians.deno.dev).
