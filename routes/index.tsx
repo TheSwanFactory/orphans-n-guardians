@@ -1,8 +1,10 @@
 import { useSignal } from "@preact/signals";
 import Counter from "../islands/Counter.tsx";
+import Joke from "../islands/Joke.tsx";
 
 export default function Home() {
   const count = useSignal(3);
+  const joke = useSignal("placeholder");
   return (
     <div class="px-4 py-8 mx-auto bg-[#86d6ef]">
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
@@ -19,7 +21,9 @@ export default function Home() {
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
         </p>
         <Counter count={count} />
+        <Joke text={joke} />
       </div>
+
       <div class="flex flex-col items-center">
         <h2 class="text-2xl font-bold">Check out our Kickstarter!</h2>
         <a
