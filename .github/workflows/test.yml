@@ -28,7 +28,7 @@ jobs:
         run: deno lint
 
       - name: Run Deno tests
-        run: deno test --allow-read --coverage=cov/
+        run: deno run t
 
       #- name: Generate LCOV report
       #  run: deno coverage --lcov cov/ > cov.lcov
