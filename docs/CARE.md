@@ -2,17 +2,21 @@
 
 ## 1. CARE Attributes
 
-Curiosity (C), Agency (A), Resilience (R), Empathy (E) define the capabilities of both characters and monsters, forming the foundation of engagement and combat mechanics.
+Curiosity (C), Agency (A), Resilience (R), Empathy (E) define the capabilities
+of both characters and monsters, forming the foundation of engagement and combat
+mechanics.
 
 ### Characters
 
 - CARE attributes represent strengths and weaknesses.
-- Players start with one strong attribute and weaker others, driving growth and adaptation.
+- Players start with one strong attribute and weaker others, driving growth and
+  adaptation.
 - Attributes determine success in skill checks and interactions with monsters.
 
 ### Monsters
 
-- Each monster has CARE resistances corresponding to its type, which dictate how hard it is to overcome using specific attributes:
+- Each monster has CARE resistances corresponding to its type, which dictate how
+  hard it is to overcome using specific attributes:
   - Guardians: High Resilience.
   - Orphans: High Empathy.
   - Demons: High Agency and Curiosity.
@@ -27,7 +31,8 @@ Curiosity (C), Agency (A), Resilience (R), Empathy (E) define the capabilities o
 
 ### Engagement Progression
 
-- To engage an Orphan or Treasure, players must first overcome or disengage from Guardians or Demons.
+- To engage an Orphan or Treasure, players must first overcome or disengage from
+  Guardians or Demons.
 
 ### Failure Consequences
 
@@ -37,7 +42,9 @@ Curiosity (C), Agency (A), Resilience (R), Empathy (E) define the capabilities o
 
 ## 3. CARE Cascading Bonuses
 
-When a player makes a successful check against a monster’s zeroed attribute, they gain a +1 bonus to a related attribute on their next turn. The reverse CARE flow ensures a thematic and strategic progression:
+When a player makes a successful check against a monster’s zeroed attribute,
+they gain a +1 bonus to a related attribute on their next turn. The reverse CARE
+flow ensures a thematic and strategic progression:
 
 1. Empathy (E) → Resilience (R):
    - Understanding others fosters inner strength.
@@ -55,7 +62,8 @@ To balance the risks of engagement, healing is limited but meaningful:
 1. Victory Healing:
    - Defeating a monster restores 1 point to any attribute.
 2. Treasure Healing:
-   - Spending 1 Treasure Point outside combat restores 2 points total across attributes.
+   - Spending 1 Treasure Point outside combat restores 2 points total across
+     attributes.
 
 ## 5. Combat Mechanics
 
@@ -63,7 +71,8 @@ To balance the risks of engagement, healing is limited but meaningful:
 
 - Players roll d6 + relevant attribute against the monster’s resistance.
 - Success reduces the monster’s resistance by 1.
-- Failure increases the monster’s resistance by 1 and can escalate the encounter.
+- Failure increases the monster’s resistance by 1 and can escalate the
+  encounter.
 
 ### Monster Attributes and Roles
 
@@ -84,4 +93,6 @@ To balance the risks of engagement, healing is limited but meaningful:
 - Heal during rest phases.
 - Serve as rewards for defeating Demons.
 
-This summary consolidates the strategic depth and simplicity of the CARE system, making it a robust and engaging framework for gameplay. Shall we refine or expand on any particular aspect?
+This summary consolidates the strategic depth and simplicity of the CARE system,
+making it a robust and engaging framework for gameplay. Shall we refine or
+expand on any particular aspect?

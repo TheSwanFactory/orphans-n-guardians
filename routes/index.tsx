@@ -8,6 +8,9 @@ export default function Home() {
   const joke = useSignal("Waiting for a joke...");
   return (
     <div>
+      <head>
+        <title>Home - Orphans & Guardians</title>
+      </head>
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
         <h1 class="text-4xl font-bold">Welcome to Orphans & Guardians</h1>
         <p class="my-2">
