@@ -1,26 +1,16 @@
 import type { Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import { default_care } from "../data/defaults.ts";
+// import { default_care } from "../data/defaults.ts";
 
 interface GameProps {
   text: Signal<string>;
 }
 
-const saveUsername = async (username: string) => {
-  const kv = await Deno.openKv();
-  const game = {
-    username,
-    care: default_care,
-  };
-  await kv.set(["games", username], game);
-};
-
 export default function Game(props: GameProps) {
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = async (event: Event) => {
+  const handleSubmit = (event: Event) => {
     event.preventDefault();
-    // await saveUsername(inputValue);
     globalThis.location.href = `/game/${inputValue}`;
   };
 

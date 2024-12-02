@@ -3,7 +3,11 @@ import Counter from "../islands/Counter.tsx";
 import Joke from "../islands/Joke.tsx";
 import Game from "../islands/Game.tsx";
 
-import { default_joke, default_username, default_count } from "../data/defaults.ts";
+import {
+  default_count,
+  default_joke,
+  default_username,
+} from "../data/defaults.ts";
 
 export default function Home() {
   const count = useSignal(default_count);
