@@ -3,9 +3,11 @@ import Counter from "../islands/Counter.tsx";
 import Joke from "../islands/Joke.tsx";
 import Game from "../islands/Game.tsx";
 
+import { default_joke, default_username, default_count } from "../data/defaults.ts";
+
 export default function Home() {
-  const count = useSignal(3);
-  const joke = useSignal("Waiting for a joke...");
+  const count = useSignal(default_count);
+  const joke = useSignal(default_joke);
   return (
     <div>
       <head>
@@ -16,7 +18,7 @@ export default function Home() {
         <p class="my-2">
           Enter a username to begin your adventure!
         </p>
-        <Game text={useSignal("Player")} />
+        <Game text={useSignal(default_username)} />
         <Counter count={count} />
         <Joke text={joke} />
       </div>
