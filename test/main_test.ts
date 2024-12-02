@@ -10,12 +10,28 @@ Deno.test(function addTest() {
 
 // Test DenoKv
 
-import { store_value, retrieve_value } from "../data/storage.ts";
+import { list_values, retrieve_value, store_value } from "../data/storage.ts";
 
 Deno.test("store_value", async () => {
   await store_value("test", "value");
   const value = await retrieve_value("test");
   if (value !== "value") {
     throw new Error("Test failed: value should be 'value'");
+  }
+});
+
+Deno.test("list_values", async () => {
+  await store_value("test", "value");
+  await store_value("tests", "values");
+
+  const values = await list_values();
+  if (values.length !== 2) {
+    throw new Error("Test failed: there should be 2 values");
+  }
+  if (values[0] !== "test") {
+    throw new Error("Test failed: value should be 'test'");
+  }
+  if (values[1] !== "tests") {
+    throw new Error("Test failed: value should be 'tests'");
   }
 });
