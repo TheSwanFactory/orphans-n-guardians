@@ -1,4 +1,4 @@
-import Storage from "./storage.ts";
+import Storage from "./Storage.ts";
 import { default_care } from "./defaults.ts";
 import { describe, it } from "@std/testing/bdd";
 import { assertEquals } from "@std/assert";
