@@ -25,10 +25,10 @@ deno task start
 
 This will watch the project directory and restart as necessary.
 
-To run the tests:
+To run the tests with appropriate permissions
 
 ```sh
-deno test --allow-read --allow-write
+deno run t
 ```
 
 To deploy, simply merge into main. The project is set up to deploy automatically
