@@ -7,15 +7,8 @@ export default function Home() {
   const count = useSignal(3);
   const joke = useSignal("Waiting for a joke...");
   return (
-    <div class="px-4 py-8 mx-auto bg-[#86d6ef]">
+    <div>
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-        <img
-          class="my-6"
-          src="/ong-logo.jpg"
-          width="128"
-          height="128"
-          alt="the Orphans & Guardians logo: gold+steel winged shield"
-        />
         <h1 class="text-4xl font-bold">Welcome to Orphans & Guardians</h1>
         <p class="my-2">
           Coming Soon!
