@@ -1,10 +1,10 @@
 import { PageProps } from "$fresh/server.ts";
 
-export default function Greet(props: PageProps) {
+export default function Game(props: PageProps) {
   return (
     <div>
       <head>
-        <title>Greet - Orphans & Guardians</title>
+        <title>Game - Orphans & Guardians</title>
       </head>
       <div>Hello {props.params.name}</div>
     </div>

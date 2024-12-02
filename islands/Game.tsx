@@ -1,16 +1,16 @@
 import type { Signal } from "@preact/signals";
 import { useState } from "preact/hooks";
 
-interface GreetProps {
+interface GameProps {
   text: Signal<string>;
 }
 
-export default function Greet(props: GreetProps) {
+export default function Game(props: GameProps) {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (event: Event) => {
     event.preventDefault();
-    globalThis.location.href = `/greet/${inputValue}`;
+    globalThis.location.href = `/game/${inputValue}`;
   };
 
   return (
@@ -26,7 +26,7 @@ export default function Greet(props: GreetProps) {
           Submit
         </button>
       </form>
-      <p class="text-3xl tabular-nums">{props.text}</p>
+      <p class="text-3xl tabular-nums">Example: {props.text}</p>
     </div>
   );
 }
