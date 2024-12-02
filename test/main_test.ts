@@ -10,22 +10,7 @@ Deno.test(function addTest() {
 
 // Test DenoKv
 
-async function store_value(key: string, value: string): Promise<void> {
-  const kv = await Deno.openKv();
-  await kv.set([key], value);
-  kv.close();
-}
-
-function retrieve_value(key: string): Promise<string | undefined> {
-  return Deno.openKv().then(async (kv) => {
-    try {
-      const result = await kv.get([key]);
-      return result?.value as string | undefined;
-    } finally {
-      kv.close();
-    }
-  });
-}
+import { store_value, retrieve_value } from "../data/storage.ts";
 
 Deno.test("store_value", async () => {
   await store_value("test", "value");
