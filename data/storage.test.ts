@@ -4,21 +4,19 @@ import { describe, it } from "@std/testing/bdd";
 import { assertEquals } from "@std/assert";
 
 describe("Storage", () => {
-  let storage: Storage;
-
   it("store_value", async () => {
-    storage = new Storage("store_value", true);
+    const storage = new Storage("store_value", true);
     try {
       await storage.store_value("test", "value");
       const value = await storage.retrieve_value("test");
       assertEquals(value, "value", "Test failed: value should be 'value'");
     } finally {
-      storage.dispose();
+      await storage.dispose();
     }
   });
 
   it("list_values", async () => {
-    storage = new Storage("list_values", true);
+    const storage = new Storage("list_values", true);
     try {
       await storage.store_value("test", "value");
       await storage.store_value("tests", "values");
@@ -28,13 +26,13 @@ describe("Storage", () => {
       assertEquals(values[0], "test", "Test failed: value should be 'test'");
       assertEquals(values[1], "tests", "Test failed: value should be 'tests'");
     } finally {
-      storage.dispose();
+      await storage.dispose();
     }
   });
 
   it("ensure_game", async () => {
+    const storage = new Storage("ensure_game", true);
     try {
-      storage = new Storage("ensure_game", true);
       const game = await storage.ensure_game("test_user");
       assertEquals(
         JSON.stringify(game),
@@ -42,7 +40,7 @@ describe("Storage", () => {
         "Test failed: game should be default_care",
       );
     } finally {
-      storage.dispose();
+      await storage.dispose();
     }
   });
 });
