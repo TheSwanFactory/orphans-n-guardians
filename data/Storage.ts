@@ -10,45 +10,44 @@ class Storage {
     this.prefix = is_test ? "test_" + prefix : prefix;
   }
 
+  private async withKv<T>(callback: (kv: Deno.Kv) => Promise<T>): Promise<T> {
+    const kv = await this.getKv();
+    try {
+      return await callback(kv);
+    } finally {
+      kv.close();
+    }
+  }
+
   private getKv(): Promise<Deno.Kv> {
     return Deno.openKv();
   }
 
   async store_value(key: string, value: string): Promise<void> {
-    const kv = await this.getKv();
-    try {
+    await this.withKv(async (kv) => {
       await kv.set([this.prefix, key], value);
-    } finally {
-      kv.close();
-    }
+    });
   }
 
-  async retrieve_value(key: string): Promise<string | undefined> {
-    const kv = await this.getKv();
-    try {
+  retrieve_value(key: string): Promise<string | undefined> {
+    return this.withKv(async (kv) => {
       const result = await kv.get([this.prefix, key]);
       return result?.value as string | undefined;
-    } finally {
-      kv.close();
-    }
+    });
   }
 
-  async list_values(): Promise<string[]> {
-    const kv = await this.getKv();
-    try {
+  list_values(): Promise<string[]> {
+    return this.withKv(async (kv) => {
       const entries = [];
       for await (const entry of kv.list({ prefix: [this.prefix] })) {
         entries.push(entry);
       }
       return entries.map((entry) => entry.key[1] as string);
-    } finally {
-      kv.close();
-    }
+    });
   }
 
-  async ensure_game(username: string): Promise<object> {
-    const kv = await this.getKv();
-    try {
+  ensure_game(username: string): Promise<object> {
+    return this.withKv(async (kv) => {
       const game = await kv.get([this.prefix, username]);
       let value = game?.value;
       if (!value) {
@@ -56,22 +55,17 @@ class Storage {
         await kv.set([this.prefix, username], value);
       }
       return value as object;
-    } finally {
-      kv.close();
-    }
+    });
   }
 
   async dispose(): Promise<void> {
     console.log("Storage.dispose", this.prefix);
     if (this.is_test) {
-      const kv = await this.getKv();
-      try {
+      await this.withKv(async (kv) => {
         for await (const entry of kv.list({ prefix: [this.prefix] })) {
           await kv.delete(entry.key);
         }
-      } finally {
-        kv.close();
-      }
+      });
     }
   }
 }
