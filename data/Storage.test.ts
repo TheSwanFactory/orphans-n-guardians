@@ -1,6 +1,6 @@
 import Storage from "./Storage.ts";
 import { default_care } from "./defaults.ts";
-import { describe, it, afterEach } from "@std/testing/bdd";
+import { afterEach, describe, it } from "@std/testing/bdd";
 import { assertEquals } from "@std/assert";
 
 describe("Storage", () => {

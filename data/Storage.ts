@@ -11,16 +11,12 @@ class Storage {
   }
 
   private async withKv<T>(callback: (kv: Deno.Kv) => Promise<T>): Promise<T> {
-    const kv = await this.getKv();
+    const kv = await Deno.openKv();
     try {
       return await callback(kv);
     } finally {
       kv.close();
     }
-  }
-
-  private getKv(): Promise<Deno.Kv> {
-    return Deno.openKv();
   }
 
   async store_value(key: string, value: string): Promise<void> {
