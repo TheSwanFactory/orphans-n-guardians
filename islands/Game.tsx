@@ -1,6 +1,4 @@
 import type { Signal } from "@preact/signals";
-import { useState } from "preact/hooks";
-// import { default_care } from "../data/defaults.ts";
 
 interface GameProps {
   text: Signal<string>;
