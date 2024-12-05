@@ -9,9 +9,7 @@ async function getGame(name: string): Promise<object> {
 
 export const handler: Handlers<RouteContext> = {
   async GET(_req, ctx) {
-    const name: string = ctx.params.name;
-    const game: object = await getGame(name);
-    ctx.params.name = name;
+    const game: object = await getGame(ctx.params.name);
     ctx.params.game = JSON.stringify(game);
     const resp = await ctx.render();
     resp.headers.set("X-Custom-Header", "Hello");
