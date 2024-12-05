@@ -17,7 +17,7 @@ export default function Joke(props: JokeProps) {
       >
         Tell me a joke
       </Button>
-      <p class="text-3xl tabular-nums">{props.text}</p>
+      <p class="text-3xl tabular-nums">{props.text.value}</p>
     </div>
   );
 }
