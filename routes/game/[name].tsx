@@ -18,6 +18,7 @@ export const handler: Handlers<RouteContext> = {
 };
 
 export default function GameForName(props: PageProps) {
+  const game = JSON.parse(props.params.game);
   return (
     <div>
       <head>
@@ -26,7 +27,13 @@ export default function GameForName(props: PageProps) {
       <div>Hello {props.params.name}</div>
       <div>
         <h2>Display Game</h2>
-        <pre>{props.params.game}</pre>
+        <ul>
+          {Object.entries(game).map(([key, value]) => (
+            <li key={key}>
+              {key}: {String(value)}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
