@@ -18,7 +18,13 @@ export const handler: Handlers<RouteContext> = {
 };
 
 export default function GameForName(props: PageProps) {
-  let game; try { game = JSON.parse(props.params.game); } catch (e) { game = {}; console.error('Failed to parse game JSON:', e); }
+  let game;
+  try {
+    game = JSON.parse(props.params.game);
+  } catch (e) {
+    game = {};
+    console.error("Failed to parse game JSON:", e);
+  }
   return (
     <div>
       <head>
